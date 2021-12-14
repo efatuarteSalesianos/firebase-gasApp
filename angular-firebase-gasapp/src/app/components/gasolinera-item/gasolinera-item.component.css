@@ -1,9 +1,49 @@
 .example-card {
-    max-width: 400px;
-    float: left;
+    background-color: ghostwhite;
+    border-radius: 15px;
+    height: 350px;
 }
 
-.example-header-image {
-    background-image: url('https://globalestacionesdeservicio.com/wp-content/uploads/2015/10/gasolineras.jpg');
-    background-size: cover;
+.image {
+    margin-top: -5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.gas-image {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 100%;
+    margin-bottom: 3%;
+}
+
+.gas-image img {
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.gas-image:hover img {
+    transform: scale(1.2);
+    transition: transform 1s ease;
+}
+
+.precios {
+    font-family: "LCDMonoWin";
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.image_gas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 24%;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-top: -3%;
 }

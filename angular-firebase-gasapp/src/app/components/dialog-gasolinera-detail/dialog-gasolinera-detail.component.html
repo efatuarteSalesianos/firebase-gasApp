@@ -1,0 +1,6 @@
+<div>
+  <p><strong>Dirección: </strong>{{gasolinera.direccion}}<button (click)="openMaps()" style="margin-left: 5%;" mat-button color="primary"><mat-icon>alt_route</mat-icon>¿Cómo Llegar?</button></p>
+  <p><strong>Localidad: </strong>{{gasolinera.Localidad}}, {{gasolinera.Provincia}}</p>
+  <p *ngIf="gasolinera.Municipio"><strong>Municipio: </strong>{{gasolinera.Municipio}}</p>
+  <p><strong>Horario: </strong>{{gasolinera.Horario}}</p>
+</div>

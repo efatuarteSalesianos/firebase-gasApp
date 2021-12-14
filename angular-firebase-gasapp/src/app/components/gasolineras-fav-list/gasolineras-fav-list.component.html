@@ -15,3 +15,19 @@
       <button mat-button (click)="deleteFavorito(gasolinera)">REMOVE LIKE</button>
     </mat-card-actions>
   </mat-card>
+  <mat-card class="example-card" *ngFor="let gasolinera of gasolinerasFavList">
+    <div fxLayout="column">
+        <div class="gas-image" fxFlex="40">
+            <img class="image" src="https://globalestacionesdeservicio.com/wp-content/uploads/2015/10/gasolineras.jpg" alt="Gasolinera">
+        </div>
+        <div fxFlex="10" fxLayout="column" fxLayoutAlign="center center" style="margin-top: 3%">
+            <p class="precios">{{gasolinera.rotulo}}</p>
+            <p>{{gasolinera.direccion}}</p>
+        </div>
+        <div style="margin: 5% 2%">
+          <button mat-icon-button (click)="deleteFavorito(gasolinera)" color="warn" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+    </div>
+</mat-card>

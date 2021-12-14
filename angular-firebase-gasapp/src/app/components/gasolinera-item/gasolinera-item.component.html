@@ -1,15 +1,16 @@
-<mat-card class="example-card" >
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{ gasolinera?.rotulo }}</mat-card-title>
-      <mat-card-subtitle>{{ gasolinera?.direccion }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{gasolinera?.direccion}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-icon-button (click)="addFavorito()"><mat-icon>favorite_border</mat-icon></button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card class="example-card">
+    <div fxLayout="column">
+        <div class="gas-image" fxFlex="40">
+            <img (click)="openDialogGasolineraDetail()" class="image" src="https://globalestacionesdeservicio.com/wp-content/uploads/2015/10/gasolineras.jpg" alt="Gasolinera">
+        </div>
+        <div fxFlex="10" fxLayout="column" fxLayoutAlign="center center" style="margin-top: 3%">
+            <p class="precios">{{gasolinera.rotulo}}</p>
+            <p>{{gasolinera.direccion}}</p>
+        </div>
+        <div style="margin: 5% 2%">
+          <button mat-icon-button (click)="addFavorito()" color="warn" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+    </div>
+</mat-card>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { GasolineraFavFirebase } from 'src/app/models/interfaces/gasolineras-firebase.interface';
 import { GasolinerasFirebaseService } from 'src/app/services/gasolineras-firebase.service';
+import { DialogGasolineraDetailComponent } from '../dialog-gasolinera-detail/dialog-gasolinera-detail.component';
 
 @Component({
   selector: 'app-gasolineras-fav-list',
@@ -10,7 +12,7 @@ import { GasolinerasFirebaseService } from 'src/app/services/gasolineras-firebas
 export class GasolinerasFavListComponent implements OnInit {
   gasolinerasFavList: GasolineraFavFirebase[] = [];
 
-  constructor(private gasolineraFirebaseService: GasolinerasFirebaseService) { }
+  constructor(private dialog: MatDialog, private gasolineraFirebaseService: GasolinerasFirebaseService) { }
 
   ngOnInit(): void {
     this.gasolineraFirebaseService.getFavorites().subscribe(resp =>  {
@@ -23,5 +25,6 @@ export class GasolinerasFavListComponent implements OnInit {
       alert(`eliminada la gasolinera ${gasolinera.rotulo}`);
     });
   }
+
 
 }

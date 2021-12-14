@@ -22,6 +22,8 @@ import { GasolineraItemComponent } from './components/gasolinera-item/gasolinera
 import { ListasComponent } from './components/listas/listas.component';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { DialogGasolineraDetailComponent } from './components/dialog-gasolinera-detail/dialog-gasolinera-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     GasolinerasListComponent,
     ToolbarComponent,
     GasolineraItemComponent,
-    ListasComponent
+    ListasComponent,
+    DialogGasolineraDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     FormsModule,
     ReactiveFormsModule,
     MaterialImportsModule,
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireAuthGuardModule,

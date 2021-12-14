@@ -9,14 +9,18 @@ export interface ListaEESSPrecio {
     cP:                             string;
     direccion:                      string;
     horario:                        string;
-    municipio:                      string;
+    Municipio:                      string;
     precioGasoleoA:                 string;
     precioGasolina95E5:             string;
     precioGasolina98E5:             string;
-    provincia:                      string;
+    Provincia:                      string;
     rotulo:                         string;
     ideess:                         string;
     idMunicipio:                    string;
     idProvincia:                    string;
     idccaa:                         string;
+    Horario:                        string;
+    Latitud:                        string;
+    Localidad:                      string;
+    longitud:                       string;
 }

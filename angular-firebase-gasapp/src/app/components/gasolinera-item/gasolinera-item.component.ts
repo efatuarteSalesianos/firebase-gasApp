@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { GasolinerasListResponse, ListaEESSPrecio } from 'src/app/models/interfaces/gasolineras.interface';
 import { GasolinerasFirebaseService } from 'src/app/services/gasolineras-firebase.service';
+import { DialogGasolineraDetailComponent } from '../dialog-gasolinera-detail/dialog-gasolinera-detail.component';
 
 @Component({
   selector: 'app-gasolinera-item',
@@ -10,7 +12,7 @@ import { GasolinerasFirebaseService } from 'src/app/services/gasolineras-firebas
 export class GasolineraItemComponent implements OnInit {
   @Input() gasolinera!: ListaEESSPrecio;
 
-  constructor(private gasolineraFirebaseService: GasolinerasFirebaseService) { }
+  constructor(private dialog: MatDialog, private gasolineraFirebaseService: GasolinerasFirebaseService) { }
 
   ngOnInit(): void {
     console.log(this.gasolinera);
@@ -19,6 +21,14 @@ export class GasolineraItemComponent implements OnInit {
   addFavorito() {
     this.gasolineraFirebaseService.addFavorite(this.gasolinera).then(resp => {
 
+    });
+  }
+
+  openDialogGasolineraDetail() {
+    this.dialog.open(DialogGasolineraDetailComponent, {
+      width: '550px',
+      disableClose: false,
+      data: { gasolinera : this.gasolinera }
     });
   }
 

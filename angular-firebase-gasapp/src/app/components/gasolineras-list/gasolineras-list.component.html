@@ -1,3 +1,4 @@
 <app-toolbar></app-toolbar>
-
-<app-gasolinera-item *ngFor="let gasolineraItem of gasolineraList |slice:1:50" [gasolinera]="gasolineraItem"></app-gasolinera-item>
+<div fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="15px grid">
+  <app-gasolinera-item fxFlex="20" *ngFor="let gasolineraItem of gasolineraList | slice:1:50" [gasolinera]="gasolineraItem"></app-gasolinera-item>
+</div>
