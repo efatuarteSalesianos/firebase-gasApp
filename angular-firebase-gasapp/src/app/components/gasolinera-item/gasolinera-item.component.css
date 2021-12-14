@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 400px;
+    float: left;
+}
+
+.example-header-image {
+    background-image: url('https://globalestacionesdeservicio.com/wp-content/uploads/2015/10/gasolineras.jpg');
+    background-size: cover;
+}
