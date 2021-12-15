@@ -24,6 +24,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogGasolineraDetailComponent } from './components/dialog-gasolinera-detail/dialog-gasolinera-detail.component';
+import { DialogCreateListComponent } from './components/dialog-create-list/dialog-create-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { DialogGasolineraDetailComponent } from './components/dialog-gasolinera-
     ToolbarComponent,
     GasolineraItemComponent,
     ListasComponent,
-    DialogGasolineraDetailComponent
+    DialogGasolineraDetailComponent,
+    DialogCreateListComponent
   ],
   imports: [
     BrowserModule,

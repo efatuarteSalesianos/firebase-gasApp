@@ -7,10 +7,30 @@
             <p class="precios">{{gasolinera.rotulo}}</p>
             <p>{{gasolinera.direccion}}</p>
         </div>
-        <div style="margin: 5% 2%">
-          <button mat-icon-button (click)="addFavorito()" color="warn" aria-label="Example icon button with a heart icon">
-            <mat-icon>favorite_border</mat-icon>
+        <div style="margin: 6% 92%">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
           </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="addFavorito()" color="warn">
+              <mat-icon>favorite_border</mat-icon>
+              <span>Añadir a favoritos</span>
+            </button>
+            <button mat-menu-item [matMenuTriggerFor]="listMenu">
+              <mat-icon>route</mat-icon>
+              <span>Añadir a una ruta</span>
+            </button>
+            <mat-menu #listMenu="matMenu">
+              <button mat-menu-item *ngFor="let lista of listasList">
+                <mat-icon>route</mat-icon>
+                <span>{{lista.title}}</span>
+              </button>
+            </mat-menu>
+            <button mat-menu-item (click)="openDialogCreateList()">
+              <mat-icon>add</mat-icon>
+              <span>Añadir a nueva ruta</span>
+            </button>
+          </mat-menu>
         </div>
     </div>
 </mat-card>
