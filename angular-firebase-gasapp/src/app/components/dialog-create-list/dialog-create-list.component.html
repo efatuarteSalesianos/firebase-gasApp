@@ -1,6 +1,6 @@
 <form [formGroup]="listForm">
 <mat-form-field appearance="fill">
-  <input matInput formControlName="title" required>
+  <input placeholder="Nombre de la ruta" matInput formControlName="title" required>
 </mat-form-field>
-<button mat-raised-button color="primary">Crear</button>
+<button style="margin-left: 5%" mat-raised-button color="primary" (click)="createList()">Crear</button>
 </form>
