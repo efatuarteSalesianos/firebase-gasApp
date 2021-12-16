@@ -20,14 +20,13 @@ gasolineraList: ListaEESSPrecio[] = [];
   municipiosList: MunicipiosResponse[] = [];
   municipioSelected = new FormControl([]);
   municipiosFiltered: MunicipiosResponse[] = [];
-  
+
   constructor(private gasolineraService: GasolinerasService) { }
 
   async ngOnInit(): Promise<void> {
     this.gasolineraService.getGasolineras().subscribe(resp => {
       let jsonString = JSON.stringify(resp);
       this.gasolineraList = this.gasolineraService.parseAnyToGasolineraListResponse(jsonString);
-      console.log(this.gasolineraList);
     });
 
     this.gasolineraService.getProvincias().subscribe(resp => {

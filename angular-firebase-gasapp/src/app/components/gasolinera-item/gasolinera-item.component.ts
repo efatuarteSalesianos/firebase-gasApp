@@ -22,7 +22,7 @@ export class GasolineraItemComponent implements OnInit {
   constructor(private dialog: MatDialog, private gasolineraFirebaseService: GasolinerasFirebaseService, private listasFirebaseService: ListasFirebaseService) { }
 
   ngOnInit(): void {
-    console.log(this.gasolinera);
+    this.getAllLists();
   }
 
   addFavorito() {
@@ -39,6 +39,14 @@ export class GasolineraItemComponent implements OnInit {
     });
   }
 
+  openDialogCreateList() {
+    this.dialog.open(DialogCreateListComponent, {
+      width: '550px',
+      disableClose: false,
+      data: { gasolinera : this.gasolinera }
+    });
+  }
+
   getAllLists(): void {
     this.listasFirebaseService.getAll().snapshotChanges().pipe(
       map(changes =>
@@ -48,14 +56,6 @@ export class GasolineraItemComponent implements OnInit {
       )
     ).subscribe(data => {
       this.listasList = data;
-    });
-  }
-
-  openDialogCreateList() {
-    this.dialog.open(DialogCreateListComponent, {
-      width: '550px',
-      disableClose: false,
-      data: { gasolinera : this.gasolinera }
     });
   }
 
